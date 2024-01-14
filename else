@@ -51,3 +51,26 @@ def prompt_and_check_fermat():
         
         chcek_fermat(a,b,c,n)
 prompt_and_chcek_fermat()
+
+        
+#User Write a function that prompts the user to input values for a, b, c and n, converts them to
+#integers, and uses check_fermat to check whether they violate Fermat’s theorem
+   
+
+# Call the function to prompt user input and check Fermat's theorem
+prompt_and_check_fermat()
+def prompt_and_check_fermat():
+    a_str = input("Enter the value for 'a": ")
+    b-str = input("Enter the value for 'b':" )
+    c_str = input("Enter the value for 'c': ")
+    n_str = input("Enter the value for 'n": ")
+    
+    try:
+        a = int(a_str)
+        b = int(b_str)
+        c = int(n_str)
+    except ValueError:
+        print("Invalid input. Please enter integer values.")
+        return
+        
+        chcek_fermat(a,b,c,n)
