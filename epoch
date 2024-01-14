@@ -1,0 +1,35 @@
+#The time module provides a function, also named time, that returns the current
+#Greenwich Mean Time in “the epoch”, which is an arbitrary time used as a reference point. On
+#UNIX systems, the epoch is 1 January 1970.
+#>>> import time
+#>>> time.time()
+#1437746094.5735958
+#Write a script that reads the current time and converts it to a time of day in hours, minutes, and
+#seconds, plus the number of days since the epoch.
+
+
+import time
+
+def current_time_and_days_since_epoch():
+    # Get the current time in seconds since the epoch
+    current_time_seconds = time.time()
+
+    # Convert the current time to a time struct
+    time_struct = time.gmtime(current_time_seconds)
+
+    # Extract hours, minutes, and seconds
+    hours = time_struct.tm_hour
+    minutes = time_struct.tm_min
+    seconds = time_struct.tm_sec
+
+    # Calculate the number of days since the epoch
+    days_since_epoch = current_time_seconds / (60 * 60 * 24)
+
+    return hours, minutes, seconds, days_since_epoch
+
+# Get current time and days since epoch
+hours, minutes, seconds, days_since_epoch = current_time_and_days_since_epoch()
+
+# Display the results
+print(f"Current Time: {hours:02d}:{minutes:02d}:{seconds:02d}")
+print(f"Days Since Epoch: {days_since_epoch:.2f}")
